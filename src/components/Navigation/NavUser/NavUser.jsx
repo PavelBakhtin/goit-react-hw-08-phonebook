@@ -22,9 +22,7 @@ export const NavUser = () => {
         Contacts
       </Button>
       <div>
-        <Typography variant="p" sx={{}}>
-          Hello, {user.name}
-        </Typography>
+        <Typography component="span">Hello, {user.name}</Typography>
 
         <Button type="button" onClick={handleLogOut}>
           Log Out

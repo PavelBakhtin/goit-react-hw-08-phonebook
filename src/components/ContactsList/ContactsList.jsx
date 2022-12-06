@@ -1,12 +1,9 @@
 import React from 'react';
-// import { StyledContactsList, StyledContactsLi } from './ContactsList.styled';
 import { getContacts, getFilter } from 'redux/contacts/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
+import { Button, List, ListItem, ListItemText } from '@mui/material/';
+
 export const ContactsList = () => {
   const dispatch = useDispatch();
   const onFilter = useSelector(getFilter);
@@ -19,7 +16,12 @@ export const ContactsList = () => {
     <List>
       {contacts.length > 0 &&
         visibleContacts.map(({ id, name, number }) => (
-          <ListItem alignItems="flex-start" key={id}>
+          <ListItem
+            component="li"
+            alignItems="flex-start"
+            key={id}
+            sx={{ borderBottom: 'solid 1px grey', marginBottom: '5px' }}
+          >
             <ListItemText>{name}: </ListItemText>
             <ListItemText>{number}</ListItemText>
             <Button
