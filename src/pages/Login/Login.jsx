@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 import { TextField, Typography, Button, Box, Stack } from '@mui/material';
 
-export const LogIn = () => {
+export const Login = () => {
   const dispatch = useDispatch();
   const handleSubmit = e => {
     e.preventDefault();

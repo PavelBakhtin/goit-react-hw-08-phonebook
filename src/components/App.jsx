@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-// import { StyledApp } from './App.Styled';
 import { useDispatch } from 'react-redux';
 import { Contacts } from 'pages/Contacts/Contacts';
-import { Register } from 'pages/register/Register';
-import { LogIn } from 'pages/Login/Login';
+import { Register } from 'pages/Register/Register';
+import { Login } from 'pages/Login/Login';
 import { HomePage } from 'pages/HomePage/HomePage';
 import { AppHeader } from './AppHeader/AppHeader';
 import { useAuth } from 'hooks/useAuth';
@@ -33,7 +32,7 @@ export const App = () => {
           <Route
             path="/login"
             element={
-              <RestrictedRoute component={LogIn} redirectTo="/contacts" />
+              <RestrictedRoute component={Login} redirectTo="/contacts" />
             }
           />
           <Route
